@@ -9,23 +9,6 @@ app.use(express.urlencoded({extended:false}));//////////////////////////////////
 
 const jwt=require('jsonwebtoken')
 
-const posts=[
-    {
-        username:'abc',
-        title:"post 1"
-    },
-    {
-        username:'bcd',
-        title:"post 2"
-    }
-
-]
-
-app.get('/posts',authenticateToken,(req,res)=>{
-
-    res.json(posts.filter(post=>post.username==req.user.name))
-}) 
-
 app.post('/login',(req,res)=>{
     //Authenticate login
 
